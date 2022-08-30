@@ -1,26 +1,20 @@
-FROM ubuntu:latest as builder
+FROM nginx:alpine as build
 
-RUN apt-get update && apt-get install curl ca-certificates -y
+RUN apk add --update \
+    wget
+    
+ARG HUGO_VERSION="0.72.0"
+RUN wget --quiet "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz" && \
+    tar xzf hugo_${HUGO_VERSION}_Linux-64bit.tar.gz && \
+    rm -r hugo_${HUGO_VERSION}_Linux-64bit.tar.gz && \
+    mv hugo /usr/bin
 
-ENV HUGO_VERSION="0.88.1"
+COPY ./ /site
+WORKDIR /site
+RUN hugo
 
-WORKDIR /tmp
+#Copy static files to Nginx
+FROM nginx:alpine
+COPY --from=build /site/public /usr/share/nginx/html
 
-RUN curl -L "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz" -o "hugo.tar.gz" && \
-    tar xvzf hugo.tar.gz
-
-FROM ubuntu:latest as server
-
-COPY --from=builder /tmp/hugo /usr/bin/hugo
-
-RUN chmod +x /usr/bin/hugo
-
-WORKDIR /usr/src/app
-
-RUN useradd -ms /bin/bash hugo
-
-USER hugo
-
-ENTRYPOINT ["hugo"]
-
-CMD ["version"]
+WORKDIR /usr/share/nginx/html
