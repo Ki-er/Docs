@@ -12,12 +12,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - 
-      uses: actions/checkout@v2
-    - 
-      name: Checkout submodules
-      uses: textbook/git-checkout-submodule-action@master
-
+      - 
+        uses: actions/checkout@v2
+      - 
+        name: Checkout submodules
+        uses: textbook/git-checkout-submodule-action@master
   docker:
     runs-on: ubuntu-latest
     steps:
