@@ -21,8 +21,6 @@ RUN useradd -ms /bin/bash hugo
 
 USER hugo
 
-EXPOSE 1313
-
 ENTRYPOINT ["hugo"]
 
 CMD ["version"]
