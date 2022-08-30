@@ -9,17 +9,15 @@ on:
       - 'main'
       - 'master'
 jobs:
-  build:
+  docker:
     runs-on: ubuntu-latest
     steps:
-      - 
+      -
+        name: Checkout
         uses: actions/checkout@v2
       - 
         name: Checkout submodules
         uses: textbook/git-checkout-submodule-action@master
-  docker:
-    runs-on: ubuntu-latest
-    steps:
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2
