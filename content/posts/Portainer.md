@@ -3,8 +3,6 @@ title: "How to install Portainer"
 date: 2022-05-28T20:00:00
 tags: ["Portainer", "Docker"]
 categories: ["Guides"]
-author: "Me"
-# author: ["Me", "You"] # multiple authors
 description: "How to install Portainer"
 showToc: true
 TocOpen: false

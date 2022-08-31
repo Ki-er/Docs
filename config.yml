@@ -59,6 +59,9 @@ params:
     enabled: true # needs to be explicitly set
     title: Kieran Robson Docs
     subtitle: "Docs for various things that I have setup"
+    buttons:
+      - name: View Posts
+        url: /archive
 
   # home-info mode
   homeInfoParams:
@@ -66,10 +69,8 @@ params:
     Content: Welcome to my docs site!
 
   socialIcons:
-    - name: twitter
-      url: "https://twitter.com/"
-    - name: github
-      url: "https://github.com/"
+    - name: website
+      url: "https://kieranrobson.com/"
 
   # for search
   # https://fusejs.io/api/options.html
@@ -84,14 +85,18 @@ params:
 
 menu:
   main:
-  - identifier: tags
-    name: tags
-    url: /tags/
-    weight: 30
-  - identifier: categories
-    name: categories
-    url: /categories/
+  - identifier: archive
+    name: Posts
+    url: /archive/
     weight: 20
+  - identifier: tags
+    name: Tags
+    url: /tags/
+    weight: 20
+  - identifier: categories
+    name: Categories
+    url: /categories/
+    weight: 30
 
 
 pygmentsUseClasses: true
