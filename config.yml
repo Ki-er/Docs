@@ -21,7 +21,7 @@ params:
   keywords: [Blog, Portfolio, PaperMod]
   images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: "January 2, 2006"
-  defaultTheme: auto # dark, light
+  defaultTheme: dark # dark, light
   disableThemeToggle: false
   ShowReadingTime: true
   ShowShareButtons: true
@@ -52,6 +52,7 @@ params:
     text: "Home"
     icon: /apple-touch-icon.png
     iconHeight: 35
+    
 
   # profile-mode
   profileMode:
@@ -128,3 +129,9 @@ markup:
     # guessSyntax: true
     # lineNos: true
     # style: monokai
+
+outputs:
+  home:
+      - HTML
+      - RSS
+      - JSON
