@@ -24,10 +24,10 @@ params:
   defaultTheme: dark # dark, light
   disableThemeToggle: false
   ShowReadingTime: true
-  ShowShareButtons: true
+  ShowShareButtons: false
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
-  ShowCodeCopyButtons: false
+  ShowCodeCopyButtons: true
   ShowWordCount: true
   ShowRssButtonInSectionTermList: true
   UseHugoToc: true
@@ -56,18 +56,9 @@ params:
 
   # profile-mode
   profileMode:
-    enabled: false # needs to be explicitly set
-    title: ExampleSite
-    subtitle: "This is subtitle"
-    imageUrl: "<img location>"
-    imageWidth: 120
-    imageHeight: 120
-    imageTitle: my image
-    buttons:
-      - name: Posts
-        url: posts
-      - name: Tags
-        url: tags
+    enabled: true # needs to be explicitly set
+    title: Kieran Robson Docs
+    subtitle: "Docs for various things that I have setup"
 
   # home-info mode
   homeInfoParams:
@@ -79,19 +70,6 @@ params:
       url: "https://twitter.com/"
     - name: github
       url: "https://github.com/"
-
-  analytics:
-    google:
-      SiteVerificationTag: "XYZabc"
-    bing:
-      SiteVerificationTag: "XYZabc"
-    yandex:
-      SiteVerificationTag: "XYZabc"
-
-  cover:
-    hidden: true # hide everywhere but not in structured data
-    hiddenInList: true # hide on list pages and home
-    hiddenInSingle: true # hide on single page
 
   # for search
   # https://fusejs.io/api/options.html
@@ -106,18 +84,15 @@ params:
 
 menu:
   main:
-    - identifier: categories
-      name: Categories
-      url: /categories/
-      weight: 10
-    - identifier: tags
-      name: Tags
-      url: /tags/
-      weight: 20
-    - identifier: main site
-      name: Links
-      url: https://kieranrobson.com
-      weight: 30
+  - identifier: tags
+    name: tags
+    url: /tags/
+    weight: 30
+  - identifier: categories
+    name: categories
+    url: /categories/
+    weight: 20
+
 
 pygmentsUseClasses: true
 markup:
