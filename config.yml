@@ -61,7 +61,7 @@ params:
     subtitle: "Docs for various things that I have setup"
     buttons:
       - name: View Posts
-        url: /archive
+        url: /archive/
 
   # home-info mode
   homeInfoParams:
