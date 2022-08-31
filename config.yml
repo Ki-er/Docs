@@ -1,4 +1,4 @@
-baseURL: "Docs.kieranrobson.com"
+baseURL: "https://docs.kieranrobson.com/"
 title: Kieran Robson Docs
 paginate: 5
 theme: PaperMod
